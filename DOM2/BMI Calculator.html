@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculaytor</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        #container{
+            width: 60%;
+            padding: 30px;
+            border: 2px solid black;
+            margin: auto;
+            margin-top: 10px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 25px;;
+        }
+        h3{
+            text-align: center;
+        }
+        input{
+            width: 50%;
+            height: 40px;
+            text-align: center;
+            display: block;
+            margin: auto;
+        }
+        #container > h3 ~ h3{
+            margin-top: 20px;
+        }
+        button{
+            height: 40px;
+            width: 50%;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check your BMI</h1>
+    <div id="container">
+        
+        <h2>Enter your weight and height below to check your BMI results</h2>
+        <h3>Put your weight here(KG)</h3>
+        <input type="text" id="weight">
+        <h3>And your height here(CM)</h3>
+        <input type="text" id="height">
+        <button id="calculateBtn">Calculate BMI</button>
+        <br>
+        <h2 id="res"></h2>
+    </div>
+</body>
+<script>
+    let givenWeight = document.getElementById("weight")
+    let givenHeight = document.getElementById("height")
+    let btn = document.getElementById("calculateBtn")
+    let result = document.getElementById("res")
+
+    btn.addEventListener("click",function(){
+
+        let heightInMeter=givenHeight.value/100;
+        let bmi = givenWeight.value/(heightInMeter**2)
+
+        if(givenWeight.value && heightInMeter){
+
+           if (bmi<=18.4) result.innerText="Your BMI is "+bmi.toFixed(2)+" which means You are UnderWeight";
+           else if (bmi>=18.5 && bmi<=24.9) result.innerText="Your BMI is "+bmi.toFixed(2)+" which means You are NormalWeight";
+           else if (bmi>=25 && bmi<=29.9) result.innerText="Your BMI is "+bmi.toFixed(2)+" which means You are OverWeight";
+           else result.innerText="Your BMI is "+bmi.toFixed(2)+" which means You are Obese"
+        }
+        else{
+            result.innerText="Please put your Weight & Height both !"
+        }
+    })
+</script>
+</html>
