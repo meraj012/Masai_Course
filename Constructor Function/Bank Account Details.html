@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Detail</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    function BankAccount(accountNo,name,type,balance){
+        this.accountNo= accountNo;
+        this.name= name;
+        this.type= type;
+        this.balance= balance;
+        this.active= true;
+    }
+
+    BankAccount.prototype.deposite= function(amount){
+        if(amount>=0){
+            this.balance+=amount;
+            console.log(`Deposited amount ${amount} and total balance ${this.balance}`)
+        } else{
+            console.log("Invalid Entry")
+        }    
+    }
+
+    BankAccount.prototype.withdraw= function(amount){
+        if(this.balance>=amount){
+            this.balance-=amount;
+            console.log(`Withdrew amount ${amount} and total balance ${this.balance}`);
+        }else{
+            console.log("Insufficient Balance!")
+        }
+    }
+
+    BankAccount.prototype.checkBalance= function(){
+        console.log(`Balance ${this.balance}`);
+    }
+
+    BankAccount.prototype.isActive= function(){
+        if(this.active==true){
+            console.log("Account is active !")
+        }else{
+            console.log("Account is Inactive !")
+        }
+    }
+
+    // Creating multiple Bank Accounts objects
+
+    let account1 = new BankAccount(10001,"Ram","current",5500);
+    let account2 = new BankAccount(10002,"Shyam","saving",3000);
+    let account3 = new BankAccount(10003,"Radha","current",500);
+    let account4 = new BankAccount(10004,"Mohan","current",1500);
+    let account5 = new BankAccount(10005,"Shankar","saving",2000);
+    
+    // Deposit operations
+     
+    account1.deposite(5000);
+    account2.deposite(1000);
+
+    // Withdraw operations
+
+    account3.withdraw(400);
+    account4.withdraw(500);
+
+    // Checking Balance
+
+    account5.checkBalance();
+    account1.checkBalance();
+
+    // Checking whether accounts are active or not
+
+    account2.isActive();
+
+    account3.active=false;
+    account3.isActive();
+
+    // Getting total amount of all the active accounts
+
+    let allAccounts=[account1,account2,account3,account4,account5];
+    
+    function getTotalBalance(allData){
+        let total=0;
+      for(let i=0; i<allData.length; i++){
+        if(allData[i]["active"]==true){
+           total+=allData[i]["balance"]
+        }
+      }
+      return total;
+    }
+
+    console.log(getTotalBalance(allAccounts))
+  
+
+    
+
+
+
+    
+</script>
+</html>

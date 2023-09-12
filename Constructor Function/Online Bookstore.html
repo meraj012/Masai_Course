@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+// Constructor function for author
+    function Author(name,birthYear,nationality){
+        this.name= name;
+        this.dob= birthYear;
+        this.nationality= nationality;
+    }
+
+// Constructor function for book
+
+    function Book(title,author,genre,price){
+        this.title=title;
+        this.author=author;
+        this.genre=genre;
+        this.price=price;
+    }
+
+// Adding a object method to the book constructor function
+
+    Book.prototype.getBookInfo=function(){
+        console.log(`title: ${this.title}`);
+        console.log(`author: ${this.author.name}`);
+        console.log(`genre: ${this.genre}`);
+        console.log(`price: ${this.price}`);
+    }
+
+// Creating Instance objects for the author constructor function
+
+    let author1 = new Author("ArunDhati Roy",1961,"Indian");
+    let author2 = new Author("Chetan Bhagat",1974,"Indian");
+    let author3 = new Author("Jhumpa Lahiri",1967,"Indian");
+
+// Creating instance objects for the book constructor function
+
+    let book1 = new Book("The God of Small Things",author1,"Fiction",999);
+    let book2 = new Book("Five Point Someone",author2,"Contemporary Fiction",1999);
+    let book3 = new Book ("Interpreter of Maladies",author3,"Fiction",1399);
+
+// All the books inside the bookStore
+
+    let bookStore = [book1,book2,book3];
+
+// Printing  details of all the books
+
+    bookStore.forEach(function(book){
+        book.getBookInfo();
+        console.log("====================")
+    });
+    
+</script>
+</html>
