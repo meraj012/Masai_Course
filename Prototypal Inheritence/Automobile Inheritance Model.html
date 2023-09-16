@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Inheritance Model</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+  <h1>Automobile Inheritance Model</h1>  
+</body>
+<script>
+   
+function Vehicle(brand, model, fuelType) {
+  this.brand = brand;
+  this.model = model;
+  this.fuelType = fuelType;
+}
+
+Vehicle.prototype.start = function () {
+  console.log(`${this.brand} ${this.model} engine started!`);
+}
+
+Vehicle.prototype.stop = function () {
+  console.log(`${this.brand} ${this.model} engine stopped!`);
+}
+
+
+function Car(brand, model, fuelType, numberOfDoors) {
+  Vehicle.call(this, brand, model, fuelType);
+  this.numberOfDoors = numberOfDoors;
+}
+
+Car.prototype = Object.create(Vehicle.prototype);
+Car.prototype.constructor = Car;
+
+Car.prototype.honk = function () {
+  console.log(`${this.brand} ${this.model} is honking!`);
+}
+
+
+function SUV(brand, model, fuelType, hasFourWheelDrive) {
+  Vehicle.call(this, brand, model, fuelType);
+  this.hasFourWheelDrive = hasFourWheelDrive;
+}
+
+SUV.prototype = Object.create(Vehicle.prototype);
+SUV.prototype.constructor = SUV;
+
+SUV.prototype.offRoad = function () {
+  console.log(`${this.brand} ${this.model} is off-roading with four-wheel drive!`);
+}
+
+
+const myCar = new Car('Toyota', 'Camry', 'Gasoline', 4);
+myCar.start();
+myCar.honk();
+myCar.stop();
+
+const mySUV = new SUV('Jeep', 'Wrangler', 'Gasoline', true);
+mySUV.start();
+mySUV.offRoad();
+mySUV.stop();
+
+</script>
+</html>
+
