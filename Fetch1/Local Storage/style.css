@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+body{
+    background-color: rgb(164, 220, 220);
+}
+#rootContainer{
+    width: 80%;
+    margin: auto;
+    
+    display: flex;
+    justify-content: space-between;
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+    
+}
+form{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    width: 250px;
+    height: 180px;
+}
+input{
+    margin: 3px 0px;
+    padding: 4px 2px;
+    width: 200px;  
+    border: 0;
+    outline: none;  
+}
+#submit{
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: rgb(34, 229, 229);
+    color: black;
+    cursor: pointer;
+}
+#submit:hover{
+    background-color: rgb(8, 150, 150);   
+}
+table{
+    width: 50%;
+    height: auto;
+    margin: 0px auto;
+    text-align: center;
+}
+table td,
+table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+table th{
+    background-color: aqua;
+}
+#rtrv{
+width: 200px;
+margin: 40px auto;
+text-align: center;
+font-weight: bold;
+
+}
+#rtrv>button{
+padding: 5px 15px;
+border-radius: 5px;
+border: 0;
+outline: none;
+margin-top: 5px;
+font-size:16px;
+cursor: pointer;
+background-color: rgb(31, 229, 229);
+}
+
+#rtrv>button:hover{
+    background-color: rgb(18, 173, 173);
+}

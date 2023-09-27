@@ -5,8 +5,8 @@ let mobile_number=document.getElementById("Mobile");
 let withdrowal_amount=document.getElementById("amount");
 let display=document.getElementById("display")
 
-myform.addEventListener("submit",(arr)=>{
-    arr.preventDefault();
+myform.addEventListener("submit",(ele)=>{
+    ele.preventDefault();
     
         
 const mypromice= new Promise(function(resolve,reject){
