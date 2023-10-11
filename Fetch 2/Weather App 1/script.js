@@ -1,5 +1,5 @@
 // Replace 'YOUR_OPENWEATHERMAP_API_KEY' with your OpenWeatherMap API key
-const openWeatherMapApiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+const openWeatherMapApiKey = 'b4f0833bab14d5aff207e711bfb2e494';
 
 // Replace 'YOUR_GOOGLE_MAPS_API_KEY' with your Google Maps API key
 const googleMapsApiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
@@ -19,7 +19,7 @@ searchButton.addEventListener('click', () => {
 async function fetchWeatherData(city) {
     try {
         // Fetch weather data from OpenWeatherMap API
-        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${openWeatherMapApiKey}&units=metric`);
+        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q={city}&appid={openWeatherMapApiKey}`);
         const weatherData = await weatherResponse.json();
 
         // Fetch coordinates (latitude and longitude) for Google Maps
