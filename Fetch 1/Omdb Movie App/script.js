@@ -14,7 +14,7 @@ searchButton.addEventListener('click', () => {
     }
 
     // Make a fetch request to the OMDB API
-    fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(movieTitle)}`)
+    fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${movieTitle}`)
         .then(response => response.json())
         .then(data => {
             console.log(data)

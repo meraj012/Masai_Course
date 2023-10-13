@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: white;
+    padding: 40px;
+    color: #333;
+
+}
+h1{
+    text-align: center;
+    text-decoration:underline;
+    margin-bottom: 20px;
+}
+input{
+    padding: 15px 20px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+input:focus{
+    outline: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+#foodContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+div > div{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+div > div:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+}
+h3{
+    margin-top: 15px;
+    margin-bottom: 4px;
+    font-size: 1.2rem;
+    color: #444;
+}
+img{
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
