@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering List of Items</title>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="root2"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+        const root = document.getElementById("root");
+        const root2 = document.getElementById("root2");
+
+        const Skills = (props) => {
+         return (
+             <ul>
+               {props.items.map((element)=>
+                <li>{element}</li>
+                )}
+             </ul>
+           )
+        }
+
+        const SkillsX = (props) =>{
+            return (
+                React.createElement("ul",null,props.items.map((element)=>
+                  React.createElement("li",null,element)
+                ))
+            )
+        }
+
+        const rootElement = ReactDOM.createRoot(root);
+        rootElement.render(<Skills items={["HTML","CSS","JAVA SCRIPT","REACT"]} />)
+        
+        const rootElement2 = ReactDOM.createRoot(root2)
+        rootElement2.render(<Skills items={["HTML","CSS","JAVA SCRIPT","REACT"]} />)
+    </script>
+     
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click event</title>
+    <style>
+        #masaiBtn{
+            padding: 1rem 3rem;
+            display: block;
+            margin: 200px auto;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: skyblue;
+            cursor: pointer;
+        }
+        #masaiBtn:hover{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+     
+     const root = document.getElementById("root");
+     
+     const Button = (props)=>{
+        function clickHandle(){
+            alert("You clicked Masai!")
+        }
+        return (
+           <button id="masaiBtn" onClick={clickHandle}>{props.name}</button>
+        )
+        
+     }
+     
+
+     const rootElement = ReactDOM.createRoot(root);
+     rootElement.render(<Button name="Masai" />)
+       
+        
+
+    </script>
+
+</body>
+</html>
