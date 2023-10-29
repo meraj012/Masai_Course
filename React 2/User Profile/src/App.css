@@ -1,0 +1,62 @@
+*{
+  margin: 0; 
+  padding: 0;
+  font-family: sans-serif;
+}
+body{
+  padding: 50px;
+}
+#container{
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.heading{
+  display: flex;
+  
+}
+#left p{
+  font-size: 20px;
+  font-style: bold;
+  margin: 10px 0px;
+}
+button{
+  margin-left: 30px;
+  height: 30px;
+  padding: 0px 15px;
+  color: #fff;
+  background-color: #1c1b1b;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+img{
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+}
+.skillLogo{
+  width: 20px;
+  height: 20px;
+}
+#skillsetsContainer{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: repeat(2, 25px);
+  gap: 10px;
+  margin-top: 50px;
+}
+.skillDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightblue;
+  width: 120px;
+  border-radius: 20px;
+}
+
+.description{ 
+   font-size: 14px;
+   margin-left: 5px;
+}
