@@ -43,7 +43,7 @@ function App(){
     
     const handleCheckbox = (id,event) =>{
      
-     const y= todos.map((ele)=>{
+     const updatedTodo= todos.map((ele)=>{
           if(ele.id === id){
             setIsChecked(event.target.checked);
             return({...ele, status: !ele.status})
@@ -51,7 +51,7 @@ function App(){
           return(ele)
         }
       })
-      setTodos(y);
+      setTodos(updatedTodo);
     }
    
     
@@ -83,7 +83,7 @@ return(
           </>
         ))
     }
-    
+    -
   
 </div>
 </>
