@@ -11,6 +11,8 @@ const TitleUpdaterCounter = () => {
 
   function handleClick(){
     setCount(count+1);
+
+    
   }
 
   return (
@@ -20,6 +22,7 @@ const TitleUpdaterCounter = () => {
     </>
   )
 }
+
 
 function App(){
     

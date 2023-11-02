@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
 
+import "./App.css";
+
 function App() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((preNum) => preNum + 1);
-      console.log("hi");
+    const timeout = setTimeout(() => {
+      setCount((preValue) => preValue + 1);
     }, 1000);
 
-    // return () => {
-    //   clearInterval(interval);
-    // };
-  }, []);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [count]);
 
   return (
     <>
